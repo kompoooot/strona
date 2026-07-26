@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <title>CHECH OUT MY BEATS</title>
     <link rel="stylesheet" href="strona.css">
-    <link rel="shortcut icon" href="pobrane.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="pobrane (1).jpg" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -98,6 +98,8 @@
         <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
         <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
         <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+
+        <p id="licznik">Visits: loading...</p>
     </footer>
 
     <script>
@@ -118,6 +120,43 @@
                 }
             });
         }
+
+
+
+        function pobierzCiasteczko(nazwa) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${nazwa}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        function ustawCiasteczko(nazwa, wartosc, dni) {
+            const data = new Date();
+            data.setTime(data.getTime() + (dni * 24 * 60 * 60 * 1000));
+            document.cookie = `${nazwa}=${wartosc};expires=${data.toUTCString()};path=/`;
+        }
+
+        const key = 'kompoooot_beats_site';
+        const bylJuz = pobierzCiasteczko('odwiedzil');
+
+        if (bylJuz) {
+            // Returning visitor - GET only, never increments
+            fetch(`https://countapi.mileshilliard.com/api/v1/get/${key}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('licznik').textContent = 'Visits: ' + data.value;
+                })
+                .catch(error => console.log('Counter error:', error));
+        } else {
+            // New visitor - HIT increments, then set cookie
+            fetch(`https://countapi.mileshilliard.com/api/v1/hit/${key}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('licznik').textContent = 'Visits: ' + data.value;
+                    ustawCiasteczko('odwiedzil', 'tak', 365);
+                })
+                .catch(error => console.log('Counter error:', error));
+        }
+
     </script>
 </body>
 </html>
