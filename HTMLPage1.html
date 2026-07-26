@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>CHECH OUT MY BEATS</title>
+    <link rel="stylesheet" href="strona.css">
+</head>
+<body>
+    <header>
+        <img src="baner.png" width="100%">
+    </header>
+
+    <nav>
+        <a href="https://www.youtube.com/@kompoooot" target="_blank">YOUTUBE</a>
+        <a href="https://soundcloud.com/kompot-435538526" target="_blank">SOUNDCLOUD</a>
+        <a href="https://www.tiktok.com/@kompooooot" target="_blank">TIKTOK</a>
+    </nav>
+
+    <main>
+            <div>
+                <img src="wane - Ten Sam Stan.jpg" class="okladka">
+                <p class="tytul">grand soir</p>
+                <audio class="moje-audio" controls src="6.mp3">
+                    Twoja przeglądarka nie obsługuje elementu audio.
+                </audio>
+                <p><a href="https://airbit.com/kompoooott#/slideout/beat/kompoooott/grand-soir" target="_blank">BUY HERE</a></p>
+            </div>
+
+            <div>
+                <img src="Xperiment.jpg" class="okladka">
+                <p class="tytul">ego</p>
+                <audio class="moje-audio" controls src="1.mp3">
+                    Twoja przeglądarka nie obsługuje elementu audio.
+                </audio>
+                <p><a href="https://airbit.com/kompoooott#/slideout/beat/kompoooott/ego" target="_blank">BUY HERE</a></p>
+            </div>
+
+            <div>
+                <img src="carty.jpg" class="okladka">
+                <p class="tytul">cave</p>
+                <audio class="moje-audio" controls src="2.mp3">
+                    Twoja przeglądarka nie obsługuje elementu audio.
+                </audio>
+                <p><a href="https://airbit.com/kompoooott#/slideout/beat/kompoooott/cave-era" target="_blank">BUY HERE</a></p>
+            </div>
+            <div>
+                <img src="kkk.jpg" class="okladka">
+                <p class="tytul">lucid</p>
+                <audio class="moje-audio" controls src="3.mp3">
+                    Twoja przeglądarka nie obsługuje elementu audio.
+                </audio>
+                <p><a href="https://airbit.com/kompoooott#/slideout/beat/kompoooott/lucid" target="_blank">BUY HERE</a></p>
+            </div>
+
+            <div>
+                <img src="Ken Carson.jpg" class="okladka">
+                <p class="tytul">vision</p>
+                <audio class="moje-audio" controls src="5.mp3">
+                    Twoja przeglądarka nie obsługuje elementu audio.
+                </audio>
+                <p><a href="https://airbit.com/kompoooott#/slideout/beat/kompoooott/vision" target="_blank">BUY HERE</a></p>
+            </div>
+
+            <div>
+                <img src="Destroy Lonely.jpg" class="okladka">
+                <p class="tytul">xan</p>
+                <audio class="moje-audio" controls src="4.mp3">
+                    Twoja przeglądarka nie obsługuje elementu audio.
+                </audio>
+                <p><a href="https://airbit.com/kompoooott#/slideout/beat/kompoooott/xan" target="_blank">BUY HERE</a></p>
+            </div>
+    </main>
+
+    <footer>
+        <p>IF YOU WANT TO PURCHASE A BEAT THAT IS NOT LISTED HERE OR ON AIRBIT CONTACT ME ON <b>kompoooott@gmail.com</b></p>
+        <br>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+        <a href="https://airbit.com/kompoooott" target="_blank">BUY HERE</a>
+    </footer>
+
+    <script>
+        const wszystkieAudio = document.querySelectorAll('.moje-audio');
+
+        wszystkieAudio.forEach(function(audio) {
+            audio.volume = 0.2;
+
+            audio.addEventListener('play', function() {
+                zatrzymajPozostale(audio);
+            });
+        });
+
+        function zatrzymajPozostale(aktualneAudio) {
+            wszystkieAudio.forEach(function(audio) {
+                if (audio !== aktualneAudio) {
+                    audio.pause();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
