@@ -75,3 +75,8 @@ a:hover{
 	color: black;
 	background-color: white;
 }
+
+  .no-click {
+    pointer-events: none;
+    user-select: none;
+  }
