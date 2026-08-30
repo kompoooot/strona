@@ -80,3 +80,7 @@ a:hover{
     pointer-events: none;
     user-select: none;
   }
+
+#cross{
+	word-spacing: 8px;
+}
